@@ -73,4 +73,11 @@ public class PaymentController {
             return new CommonResult(444,"没有对应记录，查询ID："+id,null);
         }
     }
+
+    // 测试服务调用链路跟踪
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin()
+    {
+        return "hi ,i'am payment zipkin server fall back，welcome to my home，O(∩_∩)O哈哈~";
+    }
 }

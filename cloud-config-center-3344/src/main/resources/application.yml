@@ -10,8 +10,20 @@ spring:
           uri: https://github.com/ClareXing/sprincloud-config #填写你自己的github路径
           search-paths:
             - springcloud-config
-      label: master
+      label: dev
+  rabbitmq:
+    host: 192.168.61.131
+    port: 5672
+    username: admin
+    password: admin
+
 eureka:
   client:
     service-url:
       defaultZone:  http://localhost:7001/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
