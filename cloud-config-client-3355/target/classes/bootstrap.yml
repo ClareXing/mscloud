@@ -1,0 +1,30 @@
+server:
+  port: 3355
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: dev
+      name: config
+      profile: dev
+      uri: http://localhost:3344
+  rabbitmq:
+    host: 192.168.61.131
+    port: 5672
+    username: admin
+    password: admin
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+
+
+#暴露监控端口   需要消息请求为post
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
